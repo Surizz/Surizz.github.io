@@ -1,0 +1,176 @@
+---
+layout: post
+title: vi 활용법 강의 정리
+comments: true
+---
+
+## vi 사용하는 곳
+
+* 서버 설정
+* 로그 분석
+* 시스템 설정
+* 기타 리눅스에서...
+
+## vi 명령어 구조
+
+* 명령모드
+    * `i`, `a` 등을 눌러 입력모드로 진입
+* 입력/편집모드
+    * `:` 눌러서 Ex모드 진입
+* Ex모드
+    * `q`, `q!`, `wq` 등을 눌러 나가기
+
+---
+
+## 명령모드(Commend Mode)
+
+* number 설정: `: set nu`
+* 한글 인코딩: `set encoding=utf-8`
+
+### 커서 이동
+
+* 한칸씩 이동: `up/down/left/right arrow` or `hjkl`
+* 단어 앞으로: `w`
+* 단어 뒤로; `b`
+* 단어 끝으로: `e`<br>
+
+* 다음 줄의 첫번째로 이동: `+`
+* 이전 줄의 첫번째로 이동: `-`
+* 문장 처음으로 이동: `0`
+* 문장 끝으로 이동: `$`<br>
+
+* 다음 스크롤 반(반 페이지)만큼 중간으로 이동: `ctrl+d`
+* 이전 스크롤 반(반 페이지)만큼 중간으로 이동: `ctrl+u`
+* 다음 스크롤(**한 페이지**) 이동: `ctrl+f`
+* 이전 스크롤(**한 페이지**) 이동: `ctrl+b`<br>
+
+* 현재 페이지 맨 위로: `H`
+* 현재 페이지 중간: `M`
+* 현재 페이지 끝: `L`<br>
+
+* 파일의 시작: `:0`, `gg`, `[[`
+* 파일의 끝: `G`, `]]`
+
+### 수정
+
+* 한글자 수정하고 명령모드로 돌아오기: `r+(수정할 문자)`
+* 지우고 돌아오기: `dd`, `dw`, `D`, `x`
+* 되돌리기(Undo): `u`
+* 다시하기:(Redo) `Ctrl+r`
+* 방금 한 행동 또하기: `.`
+
+### 검색
+
+* 현재부터 앞으로 검색: `/string`
+* 현재부터 이전 검색: `?string`
+* 다음 검색: `n`
+* 이전 검색(reverse): `N`
+
+### 조합
+
+* `4dw`: 4단어 지우기
+* `dG`: 현재부터 파일 끝까지 지우기
+* `5x`: 5글자 지우기
+
+---
+
+## 입력/편집 모드(Insert/Edit Mode)
+
+### 삽입
+
+* 삽입: `i`
+* 문장 처음에서 입력: `I`(0 + i 역할)
+* 문장 끝에서 입력 `A`($+i 역할)
+
+### 삭제
+
+* `cc`, `cw`, `C`
+
+---
+
+## Ex 모드
+
+### 저장
+
+* 저장하고 나가기: `:wq`
+* 이름 지정후 저장하기: `:w <filename>`
+* 저장 안하고 나가기: `:q!`
+
+### Reload
+
+* 실시간으로 Write 되는 로그 보고 싶을 때?
+    * `:e[dit]!` \- ex\) `:e`, `:edit`, ...
+
+### 단어 교체
+
+* 파일 전체: `:%s/string/replace/[option]`
+    * ex)`%s/man/woman` ==> 모든`man` 단어가 `woman`으로 바뀜
+* 특정 행 교체: `:<행시작>,<행끝>s/string/replace`
+    * ex) `:10,25s/string/replace`
+
+### Shell
+
+* vi 바깥에서 shell cmd 입력: `:shell` or `:sh`
+* 그냥 터미널 하나 더 띄우자.
+* 내부에서 실행: `:!cmd`
+    * ex) `:!ls`
+* 실행된 걸 버퍼로 가져오기: `:r !cmd`
+    * ex) `:r !cat test.txt` ==> 뒤에 test.txt가 덧붙여짐
+
+### 창 분할
+
+* 수직 창 분할: `:sp[lit]` ==> 상하로 2개
+* 수평 창 분할: `:vs[plit]` ==> 좌우로 2개
+* 분할된 창에서 이동: `Ctrl + w`
+* 분할된 창 닫기: `:q`
+* 창 전체 닫기: `:qa`
+
+### Mark
+
+* 특정 라인 저장: `ma`, `mb`, ...
+* 저장 후 이동: `'a`, `'b`, ...
+* 북마크 사용 조합 가능
+    * ex) `d'a` ==> 현재부터 a 저장한 곳 까지 지움
+
+### Yank
+
+* `복사(Copy)`란 뜻
+    * yanked - 잡아당기다 에서 나옴
+* 한줄 복사: `yy`
+* 붙여넣기: `p`
+* 특정 라인부터 현재까지 복사: `y'a`
+* 그냥 드래그 해도 됨
+
+### Buffer
+
+* Visual block : `v`
+    * ex) 블록 범위를 복사: `v`로 블록 설정 뒤 `y`
+* 라인 단위로 할땐? `V`
+
+### Customization
+
+* 자동 들여쓰기
+    * `:set ai`(auto indent)
+    * `:set si`(smart indent)
+* `no` 를 입력하여 옵션 해지 가능
+    * `:set noai`
+    * `:set nonu` ==> 넘버링 취소
+* 설정된 모드 확인: `:set`
+* tabstop
+    * `:set ts=4` \t 문자의 폭
+    * `:set sts=4` TAB키 입력 시 폭
+    * `:set sw=4` 자동 줄 맞추기 폭
+    * `:set expandtab` TAB이 스페이스로 치환
+* syntax 강조: `:syntax on`
+* 검색 옵션
+    * `:set hlsearch` 하이라이트
+    * `:set ignorecase` 대소문자 구분하지 않음
+    * `:set smartcase`
+* .vimrc
+    * `:` 를 제외한 명령을 기입해놓으면 초기 설정 가능
+
+### 참고 사이트
+
+* [http://www.openvim.com](http://www.openvim.com)
+* [usr\_toc.html](http://vimdoc.sourceforge.net/htmldoc/usr\_toc.html)
+* [vi-ref.pdf](http://web.mit.edu/merolish/Public/vi-ref.pdf)
