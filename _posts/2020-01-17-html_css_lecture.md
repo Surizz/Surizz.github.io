@@ -1,144 +1,294 @@
 ---
 layout: post
-title: html/css 강의 정리(작성중)
+title: html/css 강의 정리
 comments: true
 ---
-# HTML 기본 구조와 영역을 나누는 Element
+# 웹의 구성 요소
 
-## 웹의 구성 요소
+## HTML
 
-### HTML
-
-* `구조와 내용`
+* `구조`와 `내용`
 * HTML 문서에 대한 정보
 * 내용을 서술하고 정의
 
-### CSS
+## CSS
 
 * `모양`과 `표현`
 * 모양을 추가하거나 변경
 * 디자인을 입히는 개념
 
-### Javascript
+## Javascript
 
 * `기능`과 `액션`
 * HTML 문서 안의 동작을 추가
 * 데이터 로드, 팝업창 열기
 
-## 웹 제작 시 고려사항
+# 웹 제작 시 고려사항
 
-### 웹 표준
+## 웹 표준
 
-#### 웹 접근성
+* W3C에서 권고한 표준을 지켜 웹사이트를 제작
+* 웹 접근성
+* 웹 호환성
+
+## 웹 접근성
 
 * 물리적 / 인적 환경에 제약이 없음
 * 마우스 또는 키보드가 없는 환경
 * 시각적으로 문제가 있는 상황
 
-#### 웹 호환성
+## 웹 호환성
 
 * 브라우저 버전, 종류에 관계 없는 접근성
 * 항상 같은 렌더링 보장
 
-## HTML 엘리먼트 구성 요소
+# HTML
+
+``` html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML/CSS</title>
+  </head>
+  <body>
+    <h1>구조와 내용</h1>
+    <ul>
+      <li>HTML 문서에 대한 정보</li>
+      <li>내용을 서술하고 정의</li>
+    </ul>
+  </body>
+</html>
+```
+
+## 엘리먼트 구성 요소
+
+![image.png](/files/2660924874081404385)
 
 * 여는 태그 / 닫는 태그
-* 어트리뷰트 - 엘리먼트의 옵션, 특성을 부여해줌
-    * 어트리뷰트명="특성"
-* 내용 - 실질적으로 유저가 보는 것
+    * 엘리먼트의 시작과 끝
+* 어트리뷰트
+    * 엘리먼트의 옵션, 특성을 부여해줌
+* 내용
+    * 실질적으로 유저가 보는 것
 
-### HTML 문서 구조 - DOCKTYPE
+## HTML 문서 구조 - DOCKTYPE
 
 * 브라우저가 문서를 해석하는 방법
+
+**만약 생략한다면?**
+
 * 브라우저는 `쿽스모드(Quirksmode)`로 렌더링
-* 쿽스모드는 브라우저마다 렌더링 방식이 다름
-* 결과적으로 크로스브라우징 문제 발생(웹 호환성)
+* 쿽스모드는 브라우저마다 **렌더링 방식이 다름**
+* 결과적으로 **크로스브라우징 문제 발생**(웹 호환성)
 
-### HTML 문서 구조 - html
+## HTML 문서 구조 - html
 
-* `lang` 속성
-    * 웹 접근성을 준수하기 위함
-    * 검색(SEO)과 음성장치에서 활용
+* html 전체를 감싸는 태그
 
-### HTML 문서 구조 - meta
+**lang 속성**
+\* 웹 접근성을 준수하기 위함
+\* 검색(SEO)과 음성장치에서 활용
+
+## HTML 문서 구조 - head
+
+* html **문서에 대한 정보**를 나타내는 태그
+* meta , title이 들어감
+
+## HTML 문서 구조 - meta
 
 * 메타 데이터가 들어감
 * 문서에 대한 정보(메타 데이터) 요약
 * 사용자에게 보이지 않음
 
-#### 많이 쓰는 meta 태그
+## 많이 쓰는 meta 태그
 
-* 인코딩
-* 호환성
-* 미디어쿼리 - 반응형에 쓰임
-* Open Graph Protocol
-    * 페이스북에서 만든 meta tag
-    * 페이지에 대한 요약 정보
-    * PAYCO에도 쓰임
-    * 주의)이미지가 절대경로로 들어가야함
+**인코딩**
 
-### HTML 문서 구조 - title
+``` html
+<meta charset="UTF-8">
+```
+
+**호환성**
+
+``` html
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+```
+
+**미디어쿼리** \- 반응형에 쓰임
+
+``` html
+<meta name="viewport" content="width=devicewidth, initial-scale=1, shrink-to-fit=no">
+```
+
+**Open Graph Protocol**
+
+``` html
+<meta name="og:url" content="http://
+www.payco.com">
+<meta name="og:image" content=“http://
+image.toast.com/aaaaac/paycoNoti/
+payco_com.jpg">
+<meta name="og:title"
+content="PAYCO.COM 사는게 니나노 PAYCO”>
+<meta name="og:description"
+content="NHN 페이코의 간편결제 서비스, 착한소
+비 제로페이, 송금수수료 없는 제휴계좌, 매달
+PAYCO 포인트 리워드 혜택, 실적 조건 없이 적립되
+는 제휴카드, 실속있는 금융 생활의 중심, PAYCO”>
+```
+
+\* 페이스북에서 만든 meta tag
+\* 페이지에 대한 요약 정보
+\* PAYCO에도 쓰임
+\* 주의)이미지가 절대경로로 들어가야함
+
+## HTML 문서 구조 - title
 
 * 문서의 제목을 표시하는 태그
 
-### HTML 문서 구조 - body
+## HTML 문서 구조 - body
 
 * 실질적으로 사용자에게 보이는 부분
 
-#### h1\~h6 태그
+### h1\~h6 태그
 
-* 제목이나 부제목을 표현
+**제목이나 부제목을 표현**
 
-#### p 태그
+``` html
+<h1>안녕하세요</h1>
+<h2>안녕하세요</h2>
+<h3>안녕하세요</h3>
+<h4>안녕하세요</h4>
+<h5>안녕하세요</h5>
+<h6>안녕하세요</h6>
+```
 
-* 단락을 표현
 
-#### ol, li 태그
+### p 태그
 
-* 순서가 있는 리스트를 표현
-* 계층구조(리스트)를 표현
-\*
-1\. 내용\.\.\.
-\*
-2\. 내용\.\.\.
+**단락을 표현**
 
-#### ul, li 태그
+**html**
+``` html
+HTML/CSS<p>P태그</p>단락을 표현합니다.
+```
+**결과**
+HTML/CSS 기술교육
+P태그
+단락을 표현합니다.
 
-* 순서가 없는 리스트
-*
 
-#### strong, em 태그
+### ol, li 태그
 
-* 강조 표현
+**순서가 있는 리스트를 표현**
+**계층구조(리스트)를 표현**
 
-#### blockquote 태그
+**html**
+``` html
+<ol>
+ <li>payco</li>
+ <li>dooray!</li>
+ <li>toast</li>
+ <li>comico</li>
+</ol>
+```
+**결과**
+1.payco
+2.dooray!
+3.toast
+4.comico
+### ul, li 태그
+**순서가 없는 리스트**
 
-인용구 표현
+**html**
+``` html
+<ul>
+ <li>payco</li>
+ <li>dooray!
+ <ul>
+ <li>project</li>
+ <li>mail</li>
+ <li>calendar</li>
+ </ul>
+ </li>
+ <li>toast</li>
+ <li>comico</li>
+</ul>
+```
+**결과**
+* payco
+* dooray!
+    * project
+    * mail
+    * calendar
+* toast
+* comico
 
-> 인용구 내용이다
+### strong, em 태그
 
-#### pre, code 태그
+**강조 표현**
+* strong: 굵게
+* em: 기울임
+
+**html**
+``` html
+<strong>strong</strong>태그
+<em>em</em>태그
+```
+**결과**
+ **strong**태그*em*태그
+### blockquote 태그
+**인용구 표현**
+
+**html**
+``` html
+<blockquote>당신이 6개월 이상 한 번도 보지 않은 코드는 
+다른 사람이 다시 만드는 게 훨씬 더 나을 수 있다.</blockquote>
+```
+
+> 당신이 6개월 이상 한 번도 보지 않은 코드는 
+다른 사람이 다시 만드는 게 훨씬 더 나을 수 있다.
+
+### pre, code 태그
 
 * `pre`: 미리 지정된 서식 그대로 표현
 * `code`: 글꼴을 monospace로 표현
-    * 특징)글자마다 `너비`가 똑같다.
+    * 특징)글자마다 **너비**가 똑같다.
 
-#### a 태그
+
+### a 태그
 
 * 하이퍼링크를 표현
     * `href`속성: 이동할 주소
     * `target`속성: 페이지 이동방식
         * `_blank`시 새 창에서 표시
+     
+**html**
+```html
+<a href="http://www.payco.com" target="_blank">Payco</a>
+```
+**결과**
+[Payco](http://www.payco.com)
 
-#### img 태그
+### img 태그
 
 * 이미지 넣어줌
     * `src`속성: 이미지의 경로
     * `alt`속성: 이미지가 보이지 않을 때 나타낼 텍스트
 
-#### div 태그
+### div 태그
 
+* Division의 약자로 영역을 나눌 때 사용
 * `block` 속성 가짐 -> 각자 한줄
+
+**html**
+``` html
+<div>DIV 태그1</div>
+<div>DIV 태그2</div>
+```
+**결과**
+DIV 태그1
+DIV 태그2
 
 # Semantic Element
 
@@ -158,9 +308,15 @@ comments: true
 | figure | 문서의 멀티미디어 요소 |
 | article | 글자가 많이 들어가는 부분(그 자체로 독립적으로 구분되거나 재사용 가능한 영역) |
 
-# CSS 기본 구조와 셀렉터
+# CSS
 
-## CSS
+``` css
+ul > li {
+ color: '#CDEFDE';
+}
+```
+
+## CSS란?
 
 * Cascading Style Sheet
 * 문서의 표현을 기술하는 스타일시트 언어
@@ -195,13 +351,13 @@ comments: true
 * `부모` 엘리먼트에 적용된 스타일이 `자식` 엘리먼트에 적용됨
 * 일부 속성에 대해서만 상속
 
-### CSS 셀렉터
+## CSS 셀렉터
 
 * CSS를 적용할 요소를 지칭
 * id는 유니크 해야함
     * javascript에서 찾을 때 가장 첫번째만 검색하기 때문
 
-#### CSS 태그 셀렉터
+### CSS 태그 셀렉터
 
 * 해당 태그 전체 선택
 
@@ -213,7 +369,7 @@ p{
  }
 ```
 
-#### CSS ID 셀렉터
+### CSS ID 셀렉터
 
 * id값 앞에 `#`을 붙여서 선택
 * 우선순위 때문에 `쓰지 않는게 좋음`
@@ -225,7 +381,7 @@ p{
 }
 ```
 
-#### CSS 클래스 셀렉터
+### CSS 클래스 셀렉터
 
 * class값 앞에 `.`을 붙여서 선택
 * 가장 `많이` 쓰이는 셀렉터
@@ -237,7 +393,7 @@ p{
 }
 ```
 
-#### CSS 속성 셀렉터
+### CSS 속성 셀렉터
 
 * 대괄호 안에 속성명="값" 형태로 사용
 
@@ -248,7 +404,7 @@ p{
 }
 ```
 
-#### CSS 셀렉터 - 부모자식 관계
+### CSS 셀렉터 - 부모자식 관계
 
 * CSS 자손 셀렉터
     * 부모와 자손을 선택 시 공백 사용
@@ -262,7 +418,7 @@ p{
     * 모든 엘리멘트 선택 시 `*` 사용
     * 성능에 좋지 않음(거의 쓰지 않음)
 
-#### 유사 클래스 셀렉터
+### 유사 클래스 셀렉터
 
 * 엘리먼트의 특별한 상태일 때를 선택
 * 마우스가 올라가 있거나, 선택 되어 있거나 등등
@@ -279,14 +435,14 @@ p{
 | :nth-of-type | 해당 요소 중 n 번째 엘리먼트 |
 | :not(셀렉터) | 해당 요소가 아닌 것들 |
 
-#### 유사 엘리먼트 셀렉터
+### 유사 엘리먼트 셀렉터
 
 * 존재하는 엘리먼트가 없는 가상의 요소를 선택
 * 콜론 `::` 2개와 함께 사용(1개도 가능하지만 권장 x)
 * 엘리먼트 내용의 앞과 뒤에 내용을 삽입
 * 가상요소이기 때문에 블록 지정이 안됨
 
-### CSS 우선순위
+## CSS 우선순위
 
 * 하나의 엘리먼트에 여러가지 셀렉터로 선택이 가능
 * 우선순위에 따라 적용
@@ -315,24 +471,24 @@ p{
 * 레이아웃에 기본이 되는 개념
 * 브라우저가 렌더링 할 때 참고하는 값
 
-### CSS 박스 모델 - 구성요소
+## CSS 박스 모델 - 구성요소
 
 * 실질적으로 보이는 공간은 `Border` 부터
 
-#### background-clip
+### background-clip
 
 * border-box: 테두리 영역까지
 * padding-box: 안쪽 여백부터
 * content-box: 안쪽 여백을 제외한 내용 부분만
 * text: 텍스트 위로만
 
-#### box-sizing
+### box-sizing
 
 * content-box: `내용`을 기준으로 엘리먼트 크기를 잡음
     * 테두리는 제외
 * border-box: `테두리`부터 기준으로 엘리먼트 크기를 잡음
 
-#### width, height
+### width, height
 
 * 엘리먼트 크기를 지정
 * width
@@ -340,7 +496,7 @@ p{
 * height
 * max-width
 
-#### margin
+### margin
 
 * 1개 값 : 4면
 * 2개 값: 상, 하
@@ -348,18 +504,18 @@ p{
 * 4개 값: 상, 우, 하, 좌
 * margin-{left/right/top/bottom}
 
-#### padding
+### padding
 
 * margin과 같음
 
-#### border
+### border
 
 * border-style 값이 있어야 테두리 생김
 * 기본 1px
 * 두께, 스타일, 색상의 순서는 상관 없음
 * 방향도 margin, padding과 같이 설정 가능
 
-#### display
+### display
 
 * 블록과 인라인중 어느쪽으로 처리할지 결정
 * `p` \- 블록\, `span` \- 인라인
@@ -441,12 +597,12 @@ p{
 
 | 단위 | 설명 |
 | --- | --- |
-| px |  |
-| em |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+| px | 화소 단위 |
+| em | 부모 요소의 글자 크기 기준 배율 |
+| rem | HTML 글자 크기 기준 배율 |
+| pt | 글꼴에 많이 쓰임 |
+| % | 기본 글꼴의 상대적 크기 |
+| vw, vh | 뷰포트 기준 너비, 높이 |
 
 ## font 적용하기
 
@@ -454,11 +610,11 @@ p{
 
 | 속성 | 설명 | 값 |
 | --- | --- | --- |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| font-style | 화소 단위 | Normal \| italic \| oblique |
+| font-weight | 부모 요소의 글자 크기 기준 배율 | lighter \| normal \| bold \| bolder \| 1\~100 |
+| font-size | HTML 글자 크기 기준 배율 | <숫자><단위> |
+| font-family | 글꼴에 많이 쓰임 | 글꼴 이름 |
+| line-height | 기본 글꼴의 상대적인 크기 | normal \| <숫자\> \| <숫자\><단위\> |
 
 ## 웹 폰트
 
