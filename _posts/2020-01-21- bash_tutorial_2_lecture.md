@@ -367,6 +367,7 @@ ls /asdfasg > 2>&1 | sort
 ls | head
 cat test.txt | sort | uniq -c | sort -n
 ```
+
 **결과**
 ```bash
 1 c
@@ -381,6 +382,7 @@ cat test.txt | sort | uniq -c | sort -n
 cat test1.txt
 more test1.txt
 ```
+
 ## 일부 보기
 * 앞쪽 일부만 보기
     * head -10 test1.txt: 앞 10줄 보기
@@ -403,6 +405,7 @@ grep -r "export" /etc
 ```bash
 grep irteamro /etc/passwd | cut -d: -f1,3-4,7
 ```
+
 # Alias
 **별명**
 ```bash
@@ -455,6 +458,7 @@ value of global variable
     * 권장하는 방식
 * #!/bin/awk -f
     * 옵션을 붙여야 할 경우, env을 사용할 수 없음.
+
 ## 파일 작성
 
 ```bash
@@ -583,6 +587,7 @@ su -l irteamsu
 rlogin -l irteamsu 호스트명
 sudo apps/httpd/bin/apachectl start
 ```
+
 # 패스워드 변경하기
 * passwd
     * 접속중인 패스워드 변경
@@ -601,6 +606,7 @@ sudo apps/httpd/bin/apachectl start
 zip -r 파일 이름
 unzip -l 파일 이름
 ```
+
 # 시스템 관련 명령
 * pstree: 목록 조회
 * pidof *프로세스명*: 프로세서명으로 pid 알아내기
@@ -612,6 +618,7 @@ unzip -l 파일 이름
 * ifconfig: ip주소
 * ping: ping 보내기
 * nslookup ==> getent hosts: ip 구하기
+
 # 메뉴얼 페이지
 * man wc
 * man 2 open
