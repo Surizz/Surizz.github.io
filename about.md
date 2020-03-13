@@ -5,7 +5,7 @@ title: About
 
 안녕하세요.
 
-저는 현재 NHN에 근무하고 있으며, Computer Engeneering을 전공했습니다.
+저는 현재 NHN Payco에 근무하고 있으며, Computer Engeneering을 전공했습니다.
 
 이 블로그는 
 * 개발에 대한 소고 

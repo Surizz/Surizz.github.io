@@ -2,8 +2,8 @@
 permalink:           /:title
 # Setup
 title:               com.surizz.blog
-tagline:             'dev_history_repository_'
-description:         '개발의 흔적들<br>2020 ~ NHN'
+tagline:             'dev_history_repository'
+description:         '개발의 흔적들<br>NHN Payco<br>Junior Server Engineer'
 url:                 http://Surizz.github.io
 baseurl:             ''
 plugins:
