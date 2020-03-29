@@ -459,3 +459,6 @@ element.childNodes // 자식들을 모두 담고 있는 HTMLCollection
 * [http://developer.mozilla.org](http://developer.mozilla.org)
 * 웹플랫폼 -> API와 DOM매뉴에서 element와 node파트 확인
 * 웹 기술에 대한 거의 모든 정보를 얻을 수 있다.
+
+---
+참고: NHN 기술교육 - JavaScript 기초

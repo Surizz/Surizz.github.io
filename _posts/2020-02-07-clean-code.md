@@ -844,3 +844,6 @@ cat access.log | awk '{print $6 " " $8 }' | egrep "[45]..$" | sort | uniq -c | s
 11 /login 403
 ...
 ```
+
+---
+참고: NHN 기술교육 - 읽기 좋은 코드

@@ -61,3 +61,6 @@ comments: true
     1. GET http://L4-IP/who
     2. web-1 public IP
     3. POST http://web-1/upload
+
+---
+참고: NHN 기술교육 - 웹 서버 스케일 아웃

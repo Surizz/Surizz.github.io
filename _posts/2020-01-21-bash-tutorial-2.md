@@ -623,3 +623,6 @@ unzip -l 파일 이름
 * man wc
 * man 2 open
 * man 3 opendir
+
+---
+참고: NHN 기술교육 - bash tutorial

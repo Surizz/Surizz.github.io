@@ -1,6 +1,6 @@
 ---
 layout: post
-title: DB 스케일 아웃
+title: DB 샤딩
 comments: true
 ---
 # 네 대의 서버
@@ -100,3 +100,6 @@ comments: true
 3.어떤 셀에 속한지 물어봄
 4.  어디로 redirect할지 돌려줌
 5. 해당 셀로 접속 
+
+---
+참고: NHN 기술교육 - DB 샤딩

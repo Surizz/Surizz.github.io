@@ -190,3 +190,6 @@ file /etc/rpm/macros.jpackage
 * 파일의 종류를 판단하는 명령
 * file *파일*
 * 뒤에 `*`이 붙으면 실행 가능한 파일이라는 뜻
+
+---
+참고: NHN 기술교육 - bash tutorial
